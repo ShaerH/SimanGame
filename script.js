@@ -5,6 +5,13 @@ var level = 0;
 var started = false;
 
 
+$(".btn2").on("click", function () {
+    if (!started) {
+        $("h1").text("Level " + level);
+        nextSequence();
+        started = true;
+    }
+});
 $(document).keypress(function () {
 
     if (!started) {
