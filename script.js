@@ -32,7 +32,7 @@ $(".btn").on("click", function (i) {
 
     animatePress(userChosenColor);
 
-    checkAnswer(userClickedPattern.length-1);
+    checkAnswer(userClickedPattern.length - 1);
 
 
 });
@@ -46,7 +46,7 @@ function startOver() {
 
 function checkAnswer(currentlevel) {
     if (gamePattern[currentlevel] === userClickedPattern[currentlevel]) {
-        if (userClickedPattern.length === gamePattern.length){
+        if (userClickedPattern.length === gamePattern.length) {
             setTimeout(function () {
                 nextSequence();
             }, 1000);
@@ -83,20 +83,20 @@ function nextSequence() {
     playSound(randomChosenColor);
     animatePress(randomChosenColor);
 
-    level=level+1;
-    $("h1").html("Level "+ level);
+    level = level + 1;
+    $("h1").html("Level " + level);
 }
 
 
 function playSound(name) {
-    var sound = new Audio("sounds/"+ name+".mp3");
+    var sound = new Audio("sounds/" + name + ".mp3");
     sound.play();
 }
 
 function animatePress(currentColor) {
-    $("#"+currentColor).addClass("pressed");
+    $("#" + currentColor).addClass("pressed");
     setTimeout(function () {
-        $("#"+currentColor).removeClass("pressed");
+        $("#" + currentColor).removeClass("pressed");
     }, 100);
 }
 
